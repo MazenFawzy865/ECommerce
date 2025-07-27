@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroShop - Electronics E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"> <a href="index.html">ElectroShop</a></div>
+            <ul class="nav-links">
+                <li><a href="#" class="active" id="nav-home">Home</a></li>
+                <li><a href="#" id="nav-shop">Shop</a></li>
+                <li class="dropdown">
+                    <a href="#" id="nav-categories">Categories</a>
+                    <ul class="dropdown-content" id="category-dropdown">
+                        <li><a href="#" data-category="PCs">PCs</a></li>
+                        <li><a href="#" data-category="Laptops">Laptops</a></li>
+                        <li><a href="#" data-category="Phones">Phones</a></li>
+                        <li><a href="#" data-category="Tablets">Tablets</a></li>
+                        <li><a href="#" data-category="Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="nav-cart"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span></a></li>
+                <li><a href="Login Page.html" id="nav-login"><i class="fas fa-user" ></i> Login/Register</a></li>
+            </ul>
+            <div class="search-bar">
+                <input class="search-bar-input" type="text" id="search-input" placeholder="Search products..." aria-label="Search products">
+                <button id="search-btn" aria-label="Search">Search</button>
+            </div>
+            <button id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun" style="display: none;"></i>
+            </button>
+            <button class="menu-toggle" id="menu-toggle" title="Toggle menu" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home-section">
+            <div class="hero-content">
+                <h1>Welcome to ElectroShop</h1>
+                <p>Your one-stop shop for the latest electronic devices and accessories.</p>
+                <a href="#" class="btn btn-primary" id="shop-now-btn">Shop Now</a>
+            </div>
+        </section>
+        <section class="featured-products" id="featured-section">
+            <h2>Featured Products</h2>
+            <div class="product-categories">
+                <button class="category-btn active" data-category="All" aria-label="Show all products">All</button>
+                <button class="category-btn" data-category="PCs" aria-label="Show PC products">PCs</button>
+                <button class="category-btn" data-category="Laptops" aria-label="Show laptop products">Laptops</button>
+                <button class="category-btn" data-category="Phones" aria-label="Show phone products">Phones</button>
+                <button class="category-btn" data-category="Tablets" aria-label="Show tablet products">Tablets</button>
+                <button class="category-btn" data-category="Accessories" aria-label="Show accessory products">Accessories</button>
+            </div>
+            <div class="products-grid" id="featured-products-grid">
+                <!-- Featured products will be injeaacted here by JS -->
+            </div>
+        </section>
+        <section class="product-listing" id="shop-section" style="display:none;">
+            <div class="listing-header">
+                <h2>Shop All Products</h2>
+                <div class="filters">
+                    <select id="filter-category">
+                        <option value="All">All Categories</option>
+                        <option value="PCs">PCs</option>
+                        <option value="Laptops">Laptops</option>
+                        <option value="Phones">Phones</option>
+                        <option value="Tablets">Tablets</option>
+                        <option value="Accessories">Accessories</option>
+                    </select>
+                    <select id="sort-products">
+                        <option value="default">Sort By</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A-Z</option>
+                        <option value="name-desc">Name: Z-A</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="shop-products-grid">
+            </div>
+        </section>
+        <section class="cart-page" id="cart-section" style="display:none;">
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+            </div>
+            <div class="cart-summary">
+                <span>Total: $<span id="cart-total"></span></span>
+                <button class="btn btn-primary" id="checkout-btn">Checkout</button>
+            </div>
+        </section>
+        <section class="auth-page" id="auth-section" style="display:none;">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="login-tab">Login</button>
+                    <button class="auth-tab" id="register-tab">Register</button>
+                </div>
+
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" required aria-describedby="login-email-help">
+                        <div id="login-email-help" class="sr-only">Enter your email address to login</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="login-password" required aria-describedby="login-password-help">
+                            <span class="toggle-password" aria-label="Toggle password visibility"><i class="fa fa-eye"></i></span>
+                        </div>
+                        <div id="login-password-help" class="sr-only">Enter your password</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-email">Email Address</label>
+                        <input type="email" id="register-email" required aria-describedby="register-email-help">
+                        <div id="register-email-help" class="sr-only">Enter your email address to register</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="register-password" required aria-describedby="register-password-help">
+                            <span class="toggle-password" aria-label="Toggle password visibility"><i class="fa fa-eye"></i></span>
+                        </div>
+                        <div id="register-password-help" class="sr-only">Enter a password (minimum 6 characters)</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="register-confirm-password" required aria-describedby="register-confirm-help">
+                            <span class="toggle-password" aria-label="Toggle password visibility"><i class="fa fa-eye"></i></span>
+                        </div>
+                        <div id="register-confirm-help" class="sr-only">Confirm your password</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 ElectroShop. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
