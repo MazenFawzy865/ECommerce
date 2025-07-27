@@ -2,7 +2,7 @@
 
 A fully-featured, responsive e-commerce website built with vanilla HTML, CSS, and JavaScript. ElectroShop offers a complete online shopping experience with modern UI/UX design, comprehensive product management, and seamless user interactions.
 
-[![Live Demo](https://img.shields.io/badge/Status-Live%20Demo-brightgreen)](https://mazenfawzy865.github.io/E-Commerce/)
+[![Live Demo](https://img.shields.io/badge/Status-Live%20Demo-brightgreen)](https://mazenfawzy865.github.io/ECommerce/)
 ![Tech Stack](https://img.shields.io/badge/Tech-HTML%20%7C%20CSS%20%7C%20JavaScript-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
