@@ -43,8 +43,9 @@ A fully-featured, responsive e-commerce website built with vanilla HTML, CSS, an
 ## 📁 Project Structure
 
 ```
-E-Commerce/
+
 ├── index.html              # Main application page
+├── Login Page.html        # Login % Resgister page
 ├── style.css              # Complete styling and responsive design
 ├── script.js              # JavaScript functionality and interactions
 ├── README.md              # Project documentation
